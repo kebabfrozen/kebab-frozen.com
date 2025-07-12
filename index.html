@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kebab Frozen</title>
+<style>
+  .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .sub-title {
+      color: blue;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .main-title {
+      font-size: 48px;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .menu-buttons button {
+      background-color: transparent;
+      border: 2px solid blue;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 10px;
+    }
+
+    .menu-buttons button:hover {
+      background-color: #00bfff;
+      color: black;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .menu-item {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .menu-info {
+      padding: 15px;
+    }
+
+    .menu-name {
+      font-size: 20px;
+      margin: 10px 0 5px;
+      color: white;
+      font-style: oblique;
+    }
+
+    .menu-price {
+      color: #00bfff;
+      font-weight: bold;
+    }
+ 
+</style>
+ <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Unicons for icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <!-- Boxicons for icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Swiper CSS for Testimonials -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Kebab<span>Frozen</span>.</a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order Now</a>
+        <a href="#contact">contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="setting"> <i data-feather="setting"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Main Content (Add padding-top to account for fixed header) -->
+    <main class="main pt-20">
+      <!-- Home Section -->
+      <section
+        class="home section min-h-screen flex items-center justify-center"
+        id="home"
+      >
+        <div
+          class="home-container container mx-auto px-4 grid lg:grid-cols-2 items-center gap-8"
+        >
+          <!-- Social Links -->
+          <div
+            class="home-social flex flex-col items-center lg:items-start mb-8 lg:mb-0"
+          >
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <span
+              class="home-social-follow text-lg font-semibold text-white mb-4"
+              >Follow Us</span
+            >
+            <div class="home-social-links flex space-x-6">
+              <!-- Ikon berwarna putih untuk latar belakang gelap -->
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                class="home-social-link text-2xl text-white hover:text-blue-500 transition-colors"
+              >
+                <i class="uil uil-facebook-f"></i>
+              </a>
+              <a
+                href="https:/www.instagram.com/andika.ginting?igsh=MTNqZWI5a2J6bXAxbw=="
+                target="_blank"
+                class="home-social-link text-2xl text-white hover:text-blue-500 transition-colors"
+              >
+                <i class="uil uil-instagram"></i>
+              </a>
+              <a
+                href="https://www.x.com"
+                target="_blank"
+                class="home-social-link text-2xl text-white hover:text-blue-500 transition-colors"
+              >
+                <i class="uil uil-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Home Image -->
+          <img
+            src="logo.jpg"
+            alt="Kebab Frozen"
+            class="home-img w-64 h-64 rounded-full object-cover shadow-xl mx-auto lg:mx-0"
+            onerror="this.onerror=null;this.src='https://placehold.co/300x300/007bff/ffffff?text=Kebab+Frozen';"
+          />
+
+          <!-- Home Data -->
+          <div
+            class="home-data text-center lg:text-left col-span-full lg:col-span-1"
+          >
+            <h1 class="home-title text-5xl font-extrabold leading-tight mb-2">
+              Kebab<span class="text-blue-600">Frozen</span>.
+            </h1>
+            <h3 class="home-subtitle text-2xl font-semibold mb-4">
+              Kebab Lezat!
+            </h3>
+            <p
+              class="home-description text-base leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+            >
+              Selamat datang di dunia kebab yang penuh cita rasa! Nikmati
+              sensasi daging panggang yang empuk, bumbu rempah yang meresap
+              sempurna, dan sayuran segar dalam setiap gigitan. Kami menyajikan
+              kebab otentik yang akan memanjakan lidah Anda.
+            </p>
+            <a
+              href="#order"
+              class="button inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-700 transition-all transform hover:scale-105"
+            >
+              Beli sekarang
+              <i class="uil uil-arrow-right ml-2 text-xl"></i>
+              <!-- Contoh ikon, ubah jika perlu -->
+            </a>
+          </div>
+
+          <!-- Contact Info -->
+          <div
+            class="my-info flex flex-col md:flex-row gap-6 mt-12 lg:mt-0 col-span-full lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:justify-end"
+          >
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div
+              class="info-item flex items-center p-4 rounded-xl shadow-md flex-1"
+            >
+              <a
+                href="https:/www.instagram.com/andika.ginting?igsh=MTNqZWI5a2J6bXAxbw=="
+                target="_blank"
+                class="text-blue-500 text-3xl mr-4"
+              >
+                <i class="uil uil-instagram"></i>
+              </a>
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="info-title text-lg font-semibold text-white">
+                  Instagram
+                </h3>
+                <span class="info-subtitle text-sm text-gray-300"
+                  >Andika Rahmadani Ginting</span
+                >
+              </div>
+            </div>
+
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div
+              class="info-item flex items-center p-4 rounded-xl shadow-md flex-1"
+            >
+              <a
+                href="https://wa.me/6281262947782"
+                target="_blank"
+                class="text-blue-500 text-3xl mr-4"
+              >
+                <i class="uil uil-whatsapp"></i>
+              </a>
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="info-title text-lg font-semibold text-white">
+                  Whatsapp
+                </h3>
+                <span class="info-subtitle text-sm text-gray-300"
+                  >0812-6294-7782</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section class="about section py-16" id="about">
+        <h2 class="section-title" data-heading="Our Story">About Us</h2>
+
+        <div
+          class="about-container container mx-auto px-4 grid lg:grid-cols-2 items-center gap-8"
+        >
+          <!-- About Image -->
+          <img
+            src="IMG-20250708-WA0036.jpg"
+            alt="Kebab Frozen Logo"
+            class="about-img w-72 h-72 rounded-xl object-cover shadow-xl mx-auto lg:mx-0"
+            onerror="this.onerror=null;this.src='https://placehold.co/350x350/007bff/ffffff?text=Kebab+Frozen+Logo';"
+          />
+
+          <!-- About Data -->
+          <div class="about-data text-center lg:text-left">
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <h3 class="about-heading text-3xl font-bold text-white mb-4">
+              Kualitas & Kelezatan Sejati
+            </h3>
+            <p
+              class="about-description text-base leading-relaxed text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+            >
+              Kebab Frozen adalah destinasi Anda untuk kebab otentik berkualitas
+              tinggi. Kami berkomitmen menyajikan hidangan lezat yang dibuat
+              dari bahan-bahan terbaik, disiapkan dengan standar kebersihan
+              tertinggi. Misi kami sederhana: menghadirkan rasa kebab yang luar
+              biasa langsung ke meja Anda.
+            </p>
+
+            <div
+              class="about-info flex flex-wrap justify-center lg:justify-start gap-6 mb-12"
+            >
+              <!-- Latar belakang diubah menjadi gelap -->
+              <div
+                class="about-box p-6 rounded-xl shadow-md flex-1 min-w-[180px] max-w-[220px]"
+              >
+                <i
+                  class="uil uil-award about-icon text-blue-500 text-4xl mb-2"
+                ></i>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="about-title text-xl font-semibold text-white">
+                  Experience
+                </h3>
+                <span class="about-subtitle text-sm text-gray-300"
+                  >5+ Years in Culinary</span
+                >
+              </div>
+
+              <!-- Latar belakang diubah menjadi gelap -->
+              <div
+                class="about-box p-6 rounded-xl shadow-md flex-1 min-w-[180px] max-w-[220px]"
+              >
+                <i
+                  class="uil uil-suitcase-alt about-icon text-blue-500 text-4xl mb-2"
+                ></i>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="about-title text-xl font-semibold text-white">
+                  Satisfied Customers
+                </h3>
+                <span class="about-subtitle text-sm text-gray-300"
+                  >1000+ Happy Orders</span
+                >
+              </div>
+
+              <!-- Latar belakang diubah menjadi gelap -->
+              <div
+                class="about-box p-6 rounded-xl shadow-md flex-1 min-w-[180px] max-w-[220px]"
+              >
+                <i
+                  class="uil uil-headphones-alt about-icon text-blue-500 text-4xl mb-2"
+                ></i>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="about-title text-xl font-semibold text-white">
+                  Support
+                </h3>
+                <span class="about-subtitle text-sm text-gray-300"
+                  >Online 24/7</span
+                >
+              </div>
+            </div>
+
+            <a
+              href="#contact"
+              class="button inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-700 transition-all transform hover:scale-105"
+            >
+              Contact Us
+              <i class="uil uil-navigator ml-2 text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Excellence & Customer Experience Section (Qualifications) -->
+      <section class="qualification section py-16" id="qualifications">
+        <h2 class="section-title" data-heading="Our Standards">
+          Our Qualifications
+        </h2>
+
+        <div
+          class="qualification-container container mx-auto px-4 grid lg:grid-cols-2 gap-12"
+        >
+          <!-- Product Excellence -->
+          <div class="product-excellence">
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <h3
+              class="qualification-title text-2xl font-bold text-white mb-6 flex items-center justify-center lg:justify-start"
+            >
+              <i class="uil uil-award text-blue-500 text-3xl mr-2"></i>Product
+              Excellence
+            </h3>
+
+            <div class="timeline relative pl-8">
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-1/2"
+                ></div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3
+                  class="timeline-title text-lg font-semibold text-white mb-1"
+                >
+                  Kualitas Bahan Baku Premium
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Daging Segar dan Halal: Penggunaan daging (sapi, ayam, domba)
+                  yang terjamin kesegarannya dan diproses secara higienis, serta
+                  bersertifikat halal (jika relevan dengan target pasar).
+                  <br />
+                  Sayuran Segar: Sayuran seperti selada, tomat, bawang bombay,
+                  dan timun harus segar, renyah, dan dicuci bersih. <br />
+                  Roti Berkualitas: Roti pita, tortilla, atau roti kebab lainnya
+                  harus lembut, kenyal, dan baru dipanggang atau dihangatkan
+                  dengan sempurna. <br />
+                  Saus Pilihan: Saus (mayonnaise, saus sambal, saus tomat, atau
+                  saus spesial) harus memiliki rasa yang konsisten, dibuat dari
+                  bahan berkualitas, dan disimpan dengan benar.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-1/2"
+                ></div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3
+                  class="timeline-title text-lg font-semibold text-white mb-1"
+                >
+                  Rasa dan Aroma Otentik
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Bumbu Meresap Sempurna: Daging harus dibumbui dengan
+                  rempah-rempah yang kaya dan meresap hingga ke dalam,
+                  menciptakan cita rasa khas yang kuat dan konsisten.
+                  <br />
+                  Keseimbangan Rasa: Kombinasi daging, sayuran, dan saus harus
+                  seimbang, tidak ada satu komponen pun yang terlalu dominan.
+                  <br />
+                  Aroma Menggugah Selera: Kebab harus memiliki aroma daging
+                  panggang yang harum dan rempah-rempah yang semerbak, memikat
+                  pelanggan dari kejauhan.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-1/2"
+                ></div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3
+                  class="timeline-title text-lg font-semibold text-white mb-1"
+                >
+                  Teknik Pengolahan dan Kebersihan
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Pematangan Sempurna: Daging harus dipanggang atau dimasak
+                  hingga matang merata, empuk, dan juicy, tidak kering atau
+                  terlalu berminyak.
+                  <br />
+                  Higienis: Seluruh proses persiapan, penyimpanan, dan penyajian
+                  harus mengikuti standar kebersihan pangan yang ketat.
+                  Peralatan bersih, area kerja steril, dan penjamah makanan
+                  menggunakan perlengkapan yang sesuai. <br />
+                  Penyajian Rapi: Kebab disajikan dengan rapi, isian tertata
+                  baik di dalam roti, dan mudah untuk dimakan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Experience -->
+          <div class="customer-experience">
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <h3
+              class="qualification-title text-2xl font-bold text-white mb-6 flex items-center justify-center lg:justify-start"
+            >
+              <i class="uil uil-suitcase text-blue-500 text-3xl mr-2"></i
+              >Customer Experience
+            </h3>
+
+            <div class="timeline relative pl-8">
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-1/2"
+                ></div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3
+                  class="timeline-title text-lg font-semibold text-white mb-1"
+                >
+                  Ledakan Rasa yang Harmonis
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Sensasi Gigitan Pertama: Kebab harus mampu memberikan
+                  "ledakan" rasa yang instan dan menyenangkan sejak gigitan
+                  pertama. Ini adalah perpaduan sempurna antara gurihnya daging,
+                  segarnya sayuran, dan racikan saus yang pas.
+                  <br />
+                  Keseimbangan Rasa yang Dinamis: Setiap elemen (daging, roti,
+                  sayuran, saus, bumbu) bekerja sama secara harmonis, tidak ada
+                  yang mendominasi atau terasa "bertengkar". Hasilnya adalah
+                  simfoni rasa yang kompleks namun tetap seimbang. <br />
+                  Aftertaste yang Menggoda: Meninggalkan jejak rasa yang
+                  menyenangkan di lidah, membuat penikmatnya ingin kembali lagi
+                  untuk gigitan berikutnya, bahkan setelah kebab habis.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-1/2"
+                ></div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3
+                  class="timeline-title text-lg font-semibold text-white mb-1"
+                >
+                  Tekstur yang Menggoda Selera
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Daging Empuk dan Juicy: Daging harus dipanggang dengan
+                  sempurna, menghasilkan tekstur yang empuk, tidak kering, dan
+                  kaya akan sari daging yang meleleh di mulut.
+                  <br />
+                  Roti Lembut dengan Sedikit Krispi: Roti pita atau tortillanya
+                  harus lembut dan lentur, namun memiliki sedikit krispi dari
+                  proses pemanggangan ulang, memberikan kontras tekstur yang
+                  menarik. <br />
+                  Kriuk Segar dari Sayuran: Sayuran harus memberikan sensasi
+                  renyah yang kontras dengan kelembutan daging dan roti,
+                  menambah dimensi tekstur yang memuaskan. <br />
+                  Krim Saus yang Melumuri: Saus harus memiliki kekentalan yang
+                  pas, melumuri setiap isian tanpa membuatnya terlalu basah,
+                  menambah kelembutan dan kelembapan.
+                </p>
+              </div>
+
+              <div class="timeline-item relative mb-8 pb-4 pl-6">
+                <div
+                  class="circle-dot absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-1/2"
+                ></div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3
+                  class="timeline-title text-lg font-semibold text-white mb-1"
+                >
+                  Aroma yang Membangkitkan Selera
+                </h3>
+                <p class="timeline-text text-sm leading-relaxed text-gray-300">
+                  Wangi Khas Kebab Panggang: Aroma daging yang baru dipanggang
+                  dengan bumbu rempah harus tercium kuat dan otentik, langsung
+                  membangkitkan selera bahkan sebelum gigitan pertama.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="gallery section py-16" id="gallery">
+        <div class="gallery-header text-center mb-12">
+          <h2 class="section-title" data-heading="Visual Feast">Gallery</h2>
+          <!-- Teks berwarna putih untuk latar belakang gelap -->
+          <h3 class="text-xl font-medium text-white">
+            Nikmati cita rasa kebab terbaik dari kami
+          </h3>
+        </div>
+
+        <div
+          class="gallery-container container mx-auto px-4 grid lg:grid-cols-4 md:grid-cols-2 gap-6"
+        >
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="IMG-20250708-WA0040.jpg"
+              alt="Kebab Daging Sapi"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+              
+            </div>
+          </div>
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="glri (2).jpg"
+              alt="Kebab Ayam Pedas"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+              
+            </div>
+          </div>
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="glri (3).jpg"
+              alt="Kebab Mozarella"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+            
+            </div>
+          </div>
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="glri (4).jpg"
+              alt="Kebab Vegetarian"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+            
+            </div>
+          </div>
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="IMG-20250708-WA0051.jpg"
+              alt="Kebab Mini"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+            
+            </div>
+          </div>
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="IMG-20250708-WA0054.jpg"
+              alt="Kebab Jumbo"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+              
+            </div>
+          </div>
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="IMG-20250708-WA0052.jpg"
+              alt="Kebab Frozen Pack"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+              
+            </div>
+          </div>
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="gallery-item rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="IMG-20250708-WA0048.jpg"
+              alt="Kebab Wrap"
+              class="w-full h-64 object-cover"
+            />
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <div class="gallery-caption p-4 text-lg font-semibold text-white">
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu Section -->
+          <div class="container">
+    <div class="sub-title" id="menu">Our Delicious Selection</div>
+    <div class="main-title">Menu</div>
+
+    <div class="menu-buttons">
+      <button onclick="filterMenu('premium')">Medium</button>
+      <button onclick="filterMenu('medium')">Mini</button>
+    </div>
+
+    <div class="menu-grid" id="menuList">
+      <!-- Contoh Menu -->
+      <div class="menu-item" data-category="premium">
+        <img src="IMG-20250708-WA0056.jpg" alt="Kebab Premium">
+        <div class="menu-info">
+          <div class="menu-name">Medium isi Dua</div>
+          <div class="menu-price">Rp 40.000</div>
+        </div>
+      </div>
+     
+      <div class="menu-item" data-category="medium">
+        <img src="IMG-20250708-WA0040.jpg" alt="Kebab Medium">
+        <div class="menu-info">
+          <div class="menu-name">Mini isi Lima</div>
+          <div class="menu-price">Rp 45.000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterMenu(category) {
+      const items = document.querySelectorAll('.menu-item');
+      items.forEach(item => {
+        if (item.getAttribute('data-category') === category || category === 'all') {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+
+        <div
+          class="menu-container container mx-auto px-4 grid lg:grid-cols-3 md:grid-cols-2 gap-8"
+        >
+          <!-- Kebab Item 1: Special Beef Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix beef all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Sapi+Spesial"
+              alt="Kebab Sapi Spesial"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Sapi+Spesial';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Sapi Spesial
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Irisan daging sapi premium yang empuk, dibumbui rempah
+                  rahasia, disajikan dengan saus khas dan sayuran segar dalam
+                  roti pita hangat.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 25.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 2: Crispy Chicken Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix chicken all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Ayam+Crispy"
+              alt="Kebab Ayam Crispy"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Ayam+Crispy';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Ayam Crispy
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Potongan ayam renyah dengan bumbu spesial, dilengkapi saus
+                  pedas manis dan sayuran segar, dibalut roti tortilla yang
+                  gurih.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 22.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 3: Mozzarella Beef Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix beef all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Sapi+Mozarella"
+              alt="Kebab Mozarella"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Sapi+Mozarella';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Sapi Mozarella
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Kebab sapi klasik dengan tambahan lelehan keju mozarella yang
+                  melimpah, menciptakan sensasi gurih tak terlupakan.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 28.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 4: Vegetarian Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix vegetarian all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Vegetarian"
+              alt="Kebab Vegetarian"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Vegetarian';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Vegetarian
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Pilihan sehat dengan aneka sayuran segar, jamur, dan saus
+                  spesial tanpa daging, cocok untuk gaya hidup vegetarian.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 20.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 5: Spicy Chicken Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix chicken all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Ayam+Pedas"
+              alt="Kebab Ayam Pedas"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Ayam+Pedas';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Ayam Pedas
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Kebab ayam dengan sentuhan pedas yang membakar semangat,
+                  dilengkapi saus cabai spesial dan sayuran segar.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 23.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 6: Jumbo Beef Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix beef all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Jumbo+Sapi"
+              alt="Kebab Jumbo Sapi"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Jumbo+Sapi';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Jumbo Sapi
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Porsi besar kebab sapi untuk Anda yang sangat lapar, dengan
+                  isian daging dan sayuran yang lebih melimpah.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 35.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 7: Black Pepper Beef Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix beef all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Lada+Hitam"
+              alt="Kebab Sapi Lada Hitam"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Lada+Hitam';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Sapi Lada Hitam
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Daging sapi dengan saus lada hitam yang kaya rasa, memberikan
+                  sentuhan pedas gurih yang unik.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 27.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 8: BBQ Chicken Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix chicken all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Ayam+BBQ"
+              alt="Kebab Ayam BBQ"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Ayam+BBQ';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Ayam BBQ
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Potongan ayam panggang dengan saus BBQ manis dan berasap,
+                  disajikan dengan sayuran segar.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 24.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 9: Mushroom Kebab -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix vegetarian all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Jamur"
+              alt="Kebab Jamur"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Jamur';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Jamur
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Kebab vegetarian dengan isian jamur champignon dan paprika
+                  panggang, kaya rasa dan sehat.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 21.000</span
+              >
+            </div>
+          </div>
+
+          <!-- Kebab Item 10: Mini Kebab Pack -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="menu-card mix all rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://placehold.co/400x250/007bff/ffffff?text=Kebab+Mini+Pack"
+              alt="Kebab Mini Pack"
+              class="w-full h-48 object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x250/007bff/ffffff?text=Kebab+Mini+Pack';"
+            />
+            <div class="menu-content p-6 flex flex-col justify-between">
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="menu-title text-xl font-bold text-white mb-2">
+                  Kebab Mini Pack (Isi 5)
+                </h3>
+                <p
+                  class="menu-description text-sm text-gray-300 leading-relaxed"
+                >
+                  Paket kebab mini isi 5, cocok untuk camilan atau berbagi.
+                  Tersedia pilihan daging sapi atau ayam.
+                </p>
+              </div>
+              <span class="menu-price text-lg font-bold text-blue-600 mt-4"
+                >Rp 45.000</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Order Now Section -->
+      <section class="services section py-16" id="order">
+        <h2 class="section-title" data-heading="Easy Ordering">Order Now</h2>
+
+        <div
+          class="order-container container mx-auto px-4 grid lg:grid-cols-3 md:grid-cols-2 gap-8"
+        >
+          <!-- Order Option 1: WhatsApp -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="order-content rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105"
+          >
+            <i
+              class="uil uil-whatsapp order-icon text-blue-500 text-5xl mb-4"
+            ></i>
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <h3 class="order-title text-2xl font-bold text-white mb-2">
+              Order via WhatsApp
+            </h3>
+            <p
+              class="order-description text-base text-gray-300 leading-relaxed mb-6"
+            >
+              Pesan kebab favorit Anda dengan mudah melalui WhatsApp kami.
+              Cepat, praktis, dan langsung terhubung dengan tim kami.
+            </p>
+            <a
+              href="https://wa.me/6281262947782"
+              target="_blank"
+              class="button inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Chat Sekarang
+              <i class="uil uil-arrow-right ml-2"></i>
+            </a>
+          </div>
+
+          <!-- Order Option 2: Delivery Apps -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="order-content rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+          >
+            <i
+              class="uil uil-motor-bike order-icon text-blue-500 text-5xl mb-4"
+            ></i>
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <h3 class="order-title text-2xl font-bold text-white mb-2">
+              Delivery Apps
+            </h3>
+            <p
+              class="order-description text-base text-gray-300 leading-relaxed mb-6"
+            >
+              Temukan kami di GoFood dan GrabFood untuk pengiriman cepat
+              langsung ke pintu Anda. Nikmati kebab di mana saja!
+            </p>
+            <div class="flex justify-center gap-4">
+              <a
+                href="#"
+                target="_blank"
+                class="button inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
+              >
+                GoFood
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                class="button inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
+              >
+                GrabFood
+              </a>
+            </div>
+          </div>
+
+          <!-- Order Option 3: Pick Up at Store -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div
+            class="order-content rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105"
+          >
+            <i
+              class="uil uil-store-alt order-icon text-blue-500 text-5xl mb-4"
+            ></i>
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <h3 class="order-title text-2xl font-bold text-white mb-2">
+              Ambil di Toko
+            </h3>
+            <p
+              class="order-description text-base text-gray-300 leading-relaxed mb-6"
+            >
+              Pesan terlebih dahulu dan ambil kebab Anda langsung di lokasi
+              kami. Cepat dan mudah tanpa antre!
+            </p>
+            <a
+              href="#contact"
+              class="button inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Lihat Lokasi
+              <i class="uil uil-map-marker ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials section py-16" id="testimonials">
+        <h2 class="section-title" data-heading="What Our Customers Say">
+          Testimonials
+        </h2>
+
+        <div class="testimonials-container container mx-auto px-4 swiper">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div class="testimonial-card rounded-xl shadow-lg">
+              <div class="testimonial-quote text-blue-500 text-5xl mb-4">
+                <i class="bx bxs-quote-alt-left"></i>
+              </div>
+              <!-- Teks berwarna putih untuk latar belakang gelap -->
+              <p
+                class="testimonial-description text-base text-gray-300 leading-relaxed mb-6"
+              >
+                "Kebab Frozen benar-benar luar biasa! Dagingnya empuk, bumbunya
+                pas, dan rotinya lembut. Porsi juga pas, bikin kenyang tapi gak
+                eneg. Pasti bakal langganan terus!"
+              </p>
+              <!-- Teks berwarna putih untuk latar belakang gelap -->
+              <h3 class="testimonial-date text-sm text-gray-400 mb-4">
+                Juli 05, 2025
+              </h3>
+              <div
+                class="testimonial-profile flex items-center justify-center gap-4"
+              >
+                <img
+                  src="cowok (2).png"
+                  alt="Customer 1"
+                  class="testimonial-profile-img w-16 h-16 rounded-full object-cover border-4 border-blue-500"
+                />
+                <div class="testimonial-profile-data text-left">
+                  <!-- Teks berwarna putih untuk latar belakang gelap -->
+                  <span
+                    class="testimonial-profile-name text-lg font-semibold text-white"
+                    >Budi Santoso</span
+                  >
+                  <span
+                    class="testimonail-profile-detail block text-gray-300 text-sm"
+                    >Pelanggan Setia</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div class="testimonial-card rounded-xl shadow-lg">
+              <div class="testimonial-quote text-blue-500 text-5xl mb-4">
+                <i class="bx bxs-quote-alt-left"></i>
+              </div>
+              <!-- Teks berwarna putih untuk latar belakang gelap -->
+              <p
+                class="testimonial-description text-base text-gray-300 leading-relaxed mb-6"
+              >
+                "Saya sudah coba banyak kebab, tapi Kebab Frozen ini beda!
+                Rasanya otentik banget, kayak lagi makan di Timur Tengah.
+                Pengiriman juga cepat dan kebabnya masih hangat. Recommended!"
+              </p>
+              <!-- Teks berwarna putih untuk latar belakang gelap -->
+              <h3 class="testimonial-date text-sm text-gray-400 mb-4">
+                Juni 20, 2025
+              </h3>
+              <div
+                class="testimonial-profile flex items-center justify-center gap-4"
+              >
+                <img
+                  src="cewek.png"
+                  alt="Customer 2"
+                  class="testimonial-profile-img w-16 h-16 rounded-full object-cover border-4 border-blue-500"
+                />
+                <div class="testimonial-profile-data text-left">
+                  <!-- Teks berwarna putih untuk latar belakang gelap -->
+                  <span class="testimonial-profile-name text-white"
+                    >Siti Aminah</span
+                  >
+                  <span
+                    class="testimonail-profile-detail block text-gray-300 text-sm"
+                    >Pecinta Kuliner</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div class="testimonial-card rounded-xl shadow-lg">
+              <div class="testimonial-quote text-blue-500 text-5xl mb-4">
+                <i class="bx bxs-quote-alt-left"></i>
+              </div>
+              <!-- Teks berwarna putih untuk latar belakang gelap -->
+              <p
+                class="testimonial-description text-base text-gray-300 leading-relaxed mb-6"
+              >
+                "Kebabnya enak parah! Sausnya itu lho, bikin nagih. Pilihan
+                menunya juga banyak, jadi gak bosen. Pelayanan ramah dan
+                responsif. Fix jadi tempat favorit buat nyemil kebab!"
+              </p>
+              <!-- Teks berwarna putih untuk latar belakang gelap -->
+              <h3 class="testimonial-date text-sm text-gray-400 mb-4">
+                Mei 10, 2025
+              </h3>
+              <div
+                class="testimonial-profile flex items-center justify-center gap-4"
+              >
+                <img
+                  src="cowok.png"
+                  alt="Customer 3"
+                  class="testimonial-profile-img w-16 h-16 rounded-full object-cover border-4 border-blue-500"
+                />
+                <div class="testimonial-profile-data text-left">
+                  <!-- Teks berwarna putih untuk latar belakang gelap -->
+                  <span class="testimonial-profile-name text-white"
+                    >Rizky Pratama</span
+                  >
+                  <span
+                    class="testimonail-profile-detail block text-gray-300 text-sm"
+                    >Food Blogger</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper Pagination -->
+          <div class="swiper-pagination mt-8"></div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact section py-16" id="contact">
+        <h2 class="section-title" data-heading="Get in Touch">Contact Us</h2>
+
+        <div
+          class="contact-container container mx-auto px-4 grid lg:grid-cols-2 gap-8 items-start"
+        >
+          <!-- Contact Info -->
+          <div class="contact-info flex flex-col gap-6">
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div
+              class="contact-item rounded-xl shadow-md flex items-center gap-4"
+            >
+              <i class="uil uil-phone contact-icon text-blue-500 text-4xl"></i>
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="contact-title text-lg font-semibold text-white">
+                  Telepon
+                </h3>
+                <span class="contact-subtitle text-sm text-gray-300"
+                  >0812-6294-7782</span
+                >
+              </div>
+            </div>
+
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div
+              class="contact-item rounded-xl shadow-md flex items-center gap-4"
+            >
+              <i
+                class="uil uil-envelope contact-icon text-blue-500 text-4xl"
+              ></i>
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="contact-title text-lg font-semibold text-white">
+                  Email
+                </h3>
+                <span class="contact-subtitle text-sm text-gray-300"
+                  >andikarahmadaniginting05@gmail.com</span
+                >
+              </div>
+            </div>
+
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div
+              class="contact-item rounded-xl shadow-md flex items-center gap-4"
+            >
+              <i
+                class="uil uil-map-marker contact-icon text-blue-500 text-4xl"
+              ></i>
+              <div>
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <h3 class="contact-title text-lg font-semibold text-white">
+                  Lokasi
+                </h3>
+                <span class="contact-subtitle text-sm text-gray-300"
+                  >Gg.Masjid Al-amri,No.13,Asam Kumbang,Kec.Medan Selayang,Kota Medan,Sumatra Utara 20133</span
+                >
+              </div>
+            </div>
+
+            <!-- Embed Google Maps -->
+            <!-- Latar belakang diubah menjadi gelap -->
+            <div class="contact-item rounded-xl shadow-md">
+              <!-- Teks berwarna putih untuk latar belakang gelap -->
+              <h3 class="contact-title text-lg font-semibold text-white mb-2">
+                Temukan Kami di Peta
+              </h3>
+              <div class="map-container overflow-hidden rounded-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.1348691427206!2d98.61700567403415!3d3.5563865505162844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f9c277f7a03%3A0x76b6049726be0265!2sGg.%20Masjid%20Al%20Amri%20No.13%2C%20Asam%20Kumbang%2C%20Kec.%20Medan%20Selayang%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020133!5e0!3m2!1sen!2sid!4v1752161039324!5m2!1sen!2sid"
+                  width="100%"
+                  height="250"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <!-- Latar belakang diubah menjadi gelap -->
+          <div class="contact-form rounded-xl shadow-lg">
+            <!-- Teks berwarna putih untuk latar belakang gelap -->
+            <h3
+              class="contact-title text-2xl font-bold text-white mb-6 text-center"
+            >
+              Kirim Pesan kepada Kami
+            </h3>
+            <form id="contact-form" class="grid gap-4">
+              <div class="input-control">
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <label
+                  for="name"
+                  class="block text-white text-sm font-medium mb-1"
+                  >Nama Lengkap</label
+                >
+                <!-- Latar belakang dan warna teks diubah untuk tema gelap -->
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Masukkan nama Anda"
+                  required
+                />
+              </div>
+              <div class="input-control">
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <label
+                  for="email"
+                  class="block text-white text-sm font-medium mb-1"
+                  >Email Anda</label
+                >
+                <!-- Latar belakang dan warna teks diubah untuk tema gelap -->
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Masukkan email Anda"
+                  required
+                />
+              </div>
+              <div class="input-control">
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <label
+                  for="subject"
+                  class="block text-white text-sm font-medium mb-1"
+                  >Subjek</label
+                >
+                <!-- Latar belakang dan warna teks diubah untuk tema gelap -->
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Subjek pesan"
+                  required
+                />
+              </div>
+              <div class="input-control">
+                <!-- Teks berwarna putih untuk latar belakang gelap -->
+                <label
+                  for="message"
+                  class="block text-white text-sm font-medium mb-1"
+                  >Pesan Anda</label
+                >
+                <!-- Latar belakang dan warna teks diubah untuk tema gelap -->
+                <textarea
+                  id="message"
+                  name="message"
+                  class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
+                  placeholder="Tulis pesan Anda di sini..."
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="button inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-700 transition-all transform hover:scale-105 mt-4"
+              >
+                Kirim Pesan
+                <i class="uil uil-message ml-2 text-xl"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer bg-gray-800 py-8">
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="footer-title text-white text-2xl font-bold mb-2">
+            Kebab<span class="text-blue-500">Frozen</span>.
+          </h1>
+          <span class="footer-subtitle text-gray-400 text-sm block mb-6"
+            >Kelezatan Kebab Otentik</span
+          >
+
+          <ul class="footer-links flex justify-center space-x-6 mb-6">
+            <li>
+              <a
+                href="#about"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#menu"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >Menu</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="footer-link text-white hover:text-blue-500 transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <div class="footer-social flex justify-center space-x-6 mb-6">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="footer-social-link text-white text-2xl hover:text-blue-500 transition-colors"
+            >
+              <i class="uil uil-facebook-f"></i>
+            </a>
+            <a
+              href="https:/www.instagram.com/andika.ginting?igsh=MTNqZWI5a2J6bXAxbw=="
+              target="_blank"
+              class="footer-social-link text-white text-2xl hover:text-blue-500 transition-colors"
+            >
+              <i class="uil uil-instagram"></i>
+            </a>
+            <a
+              href="https://www.x.com"
+              target="_blank"
+              class="footer-social-link text-white text-2xl hover:text-blue-500 transition-colors"
+            >
+              <i class="uil uil-twitter"></i>
+            </a>
+          </div>
+
+          <span class="footer-copy text-gray-500 text-xs block"
+            >&copy; 2025 Andika Rahmadani Ginting.</span
+          >
+          <span class="footer-copy text-gray-500 text-xs block"
+            >&copy; By Reyhan. All rights reserved.</span
+          >
+        </div>
+      </footer>
+    </main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- MixItUp JS for filtering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+     <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+  </body>
+</html>
